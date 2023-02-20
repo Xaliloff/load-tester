@@ -1,0 +1,23 @@
+<div fxLayout="column" fxFill fxLayoutAlign="start center" class="sidebar">
+  <div fxFlex="20%"></div>
+  <div fxFlex="50%">
+    <button mat-icon-button routerLink="">
+      <mat-icon>home</mat-icon>
+    </button>
+    <br />
+    <br />
+    <button mat-icon-button (click)="openTestConfigCreationDialog()">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <br />
+    <br />
+    <button mat-icon-button disabled>
+      <mat-icon>description</mat-icon>
+    </button>
+  </div>
+  <div fxFlex="30%">
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</div>

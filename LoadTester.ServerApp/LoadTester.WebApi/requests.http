@@ -1,0 +1,15 @@
+GET http://localhost:5027/api/1.0/test-configuration
+
+GET http://localhost:5027/api/1.0/test-configuration/1
+
+POST http://localhost:5027/api/1.0/test-configuration
+
+DELETE http://localhost:5027/api/1.0/test-configuration/1
+
+POST http://localhost:5027/api/1.0/test-configuration/1/execute   // Execute the test using configuration with id 1
+
+GET http://localhost:5027/api/1.0/load-test   // Get all load tests
+
+GET http://localhost:5027/api/1.0/load-test/1  // Get load test with id 1
+
+POST http://localhost:5027/api/1.0/load-test/1/execute   // re-Execute the load test with the same config as with id 1

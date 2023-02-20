@@ -1,0 +1,17 @@
+<div fxLayout="row" fxFill>
+  <div fxFlex="auto" class="center">
+    <h2>Load test configurations</h2>
+    <br />
+    <mat-tab-group #tab mat-align-tabs="start">
+      <mat-tab *ngFor="let tab of tabs" label="{{ tab }}">
+        <br />
+        <app-load-test-configs-list
+          *ngIf="selectedTab === tab"
+        ></app-load-test-configs-list
+      ></mat-tab>
+    </mat-tab-group>
+  </div>
+  <div fxFlex="30%" class="right-bar">
+    <h2>Last tests activity</h2>
+  </div>
+</div>

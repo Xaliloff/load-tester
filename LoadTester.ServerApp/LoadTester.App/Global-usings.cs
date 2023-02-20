@@ -1,0 +1,15 @@
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Threading.Tasks;
+global using LoadTester.App.Repositories;
+global using Microsoft.Extensions.Logging;
+global using System.Threading;
+global using System.Diagnostics;
+global using System.Net.Http;
+global using Microsoft.AspNetCore.SignalR;
+global using System.IO;
+global using Newtonsoft.Json;
+global using LoadTester.App.Entities;
+global using LoadTester.App.Entities.WorkflowEntities;
+global using LoadTester.App.Entities.LoadTestConfiguration;

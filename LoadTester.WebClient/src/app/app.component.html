@@ -1,0 +1,8 @@
+<div fxLayout="row" fxFill >
+  <div fxFlex="100px" class="sidebar" *ngIf="isLoggedIn$ | async">
+    <app-side-toolbar></app-side-toolbar>
+  </div>
+  <div fxFlex="auto" class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

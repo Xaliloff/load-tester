@@ -1,0 +1,35 @@
+<div
+  class="load-test-config-container"
+  fxLayout="row"
+  fxLayout.lt-md="column"
+  fxFill
+  *ngIf="loadTestConfig"
+>
+  <div
+    fxFlex="35"
+    fxFlex.lt-md="90"
+    fxFlexOffset="5"
+  >
+    <app-load-test-config-info
+      [loadTestConfig]="loadTestConfig"
+    ></app-load-test-config-info>
+  </div>
+  <div
+    fxFlex="50"
+    fxFlex.lt-md="90"
+    fxFlexOffset="5"
+  >
+    <app-load-test-config-tests
+      *ngIf="!selectedTest; else selected_load_test"
+      [loadTestConfig]="loadTestConfig"
+      (testSelectedEvent)="openTest($event)"
+    ></app-load-test-config-tests>
+  </div>
+</div>
+
+<ng-template #selected_load_test>
+  <app-load-test
+    [loadTestId]="selectedTest"
+    (goBackEvent)="goBackFromTest()"
+  ></app-load-test>
+</ng-template>

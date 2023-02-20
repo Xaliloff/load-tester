@@ -1,0 +1,59 @@
+<h2 mat-dialog-title>Test configuration</h2>
+
+<form [formGroup]="testCreationForm" (ngSubmit)="onSubmit()">
+  <mat-dialog-content class="mat-typography">
+    <div fxLayout="column" fxLayoutAlign="center">
+      <mat-form-field appearance="fill">
+        <mat-label>Test name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Url</mat-label>
+        <input matInput formControlName="url" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Body</mat-label>
+        <input matInput formControlName="body" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Initial user count</mat-label>
+        <input matInput formControlName="concurrentUsers" />
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center">
+      <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field appearance="fill" fxFlex="50">
+          <mat-label>New users every</mat-label>
+          <input
+            matInput
+            formControlName="newUsersCreationIntervalInSec"
+            placeholder="10"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill" fxFlex="50">
+          <mat-label
+            >Number of new users every
+            {{ testCreationForm.value.newUsersCreationIntervalInSec }}
+          </mat-label>
+          <input matInput formControlName="increaseUsersBy" />
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field appearance="fill" fxFlex="50">
+          <mat-label>Test total duration </mat-label>
+          <input matInput formControlName="durationInSeconds" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" fxFlex="50">
+          <mat-label>Delay between requests</mat-label>
+          <input matInput formControlName="requestDelayInMs" />
+          <span matSuffix>ms</span>
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button type="submit">Save</button>
+  </mat-dialog-actions>
+</form>

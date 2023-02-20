@@ -1,0 +1,53 @@
+<table mat-table [dataSource]="loadTestConfigs" class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="url">
+    <th mat-header-cell *matHeaderCellDef>URL</th>
+    <td mat-cell *matCellDef="let element">{{ element.url }}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="lastTimeUsed">
+    <th mat-header-cell *matHeaderCellDef>Last time used</th>
+    <td mat-cell *matCellDef="let element">{{ element.lastTimeUsed }}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element" align="end">
+      <button
+        mat-icon-button
+        color="primary"
+        (click)="$event.stopPropagation(); runLoadTest(element.id)"
+      >
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="warn"
+        (click)="$event.stopPropagation(); onDeleteLoadTestConfig(element.id)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button color="accent" (click)="$event.stopPropagation()">
+        <mat-icon>more</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr
+    mat-row
+    (click)="openTestConfig(row.id)"
+    *matRowDef="let row; columns: displayedColumns"
+  ></tr>
+</table>

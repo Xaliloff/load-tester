@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-title>{{ loadTestConfig.name }}</mat-card-title>
+    <mat-card-content>
+      <table class="info-table">
+        <tr>
+          <td class="info-table-key">Url:</td>
+          <td class="info-table-key">{{ loadTestConfig.url }}</td>
+        </tr>
+        <tr class="info-table-key">
+          <td>Concurrent users:</td>
+          <td class="info-table-key">{{ loadTestConfig.concurrentUsers }}</td>
+        </tr>
+        <tr class="info-table-key">
+          <td>Duration:</td>
+          <td class="info-table-key">
+            {{ loadTestConfig.durationInSeconds | secondsToTime }}
+          </td>
+        </tr>
+        <br />
+        {{
+          loadTestConfig | json
+        }}
+      </table>
+    </mat-card-content>
+  </mat-card>
